@@ -1,0 +1,15 @@
+sdz_ati:
+    resource: "@SdzATIBundle/Resources/config/routing.yml"
+    prefix:   /ati
+
+login:
+    path:    /login
+    defaults: { _controller: "SdzUserBundle:Security:login"}
+
+login_check:
+    path:    /login_check
+
+logout:
+    path:    /logout
+
+

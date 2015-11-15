@@ -1,0 +1,86 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Shop
+{% endblock %}
+
+{% block titre_panel %}
+	Shop Management/ <i>{{magasinN.nom}}</i>
+{% endblock %}
+
+{% block option_panel %}
+{% if is_granted('ROLE_ADMIN') %}
+<a class="btn btn-info" href="{{ path('sdz_ati_gestion_magasin_ajout',{'id':magasinN.id}) }}">Ajouter un produit</a>
+{% endif %}
+
+<br/>
+{% for message in app.session.flashbag.get('infom') %}
+<h5 class="text-success">
+{{message}}
+</h5>
+{% endfor %}
+                              
+{% endblock %}
+
+{% block corps_panel %}
+{% set pied=1 %}
+<section class="table-responsive">
+<table class="table table-striped table-condensed">
+    <thead>
+    <tr>
+    <th>Statut</th>
+    <th>Nom</th>
+    <th>Quantite</th>
+    {% if is_granted('ROLE_ADMIN') %}
+    <th>Operation</th>
+    {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% if nombrePage == 0 %}
+    {% set pied=0 %}
+    <tr class="warning"> <td> Aucun Produit enregistré</td></tr>
+    {% elseif page > nombrePage %}
+    
+    <tr class="well"> <td>Page incorrecte </td> </tr>
+    {% else %}
+    
+    {% for pm in liste_produit %}
+    {% if pm.id is defined %}
+    <tr class="warning">
+    <td><span class="glyphicon glyphicon-ok-sign {% if pm.quantite ==0 %}text-danger{% else %}
+text-success{% endif %}" ></span> </td>
+    <td>
+
+
+   <a  href="#"> {{ pm.produit.nom }} </a></td>
+    <td><span class="badge"> {{ pm.quantite }} </span></td>
+    <td> 
+    {% if is_granted('ROLE_GESTIONNAIRE') %}
+    <a class="label-danger badge" href="{{ path('sdz_ati_magasin_sortie',{'id': pm.id})}}">Sortie</a> / 
+    <a class="label-success badge" href="{{ path('sdz_ati_magasin_provision',{'id': pm.id})}}">Entrée</a>  {% endif %}  </td>
+    </tr>
+    {% else %}
+    <tr class="warning"> <td> Aucun Produit enregistré</td></tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+
+
+    {% endif %}
+
+
+ </table>   
+</section>
+{% if pied==1 %}
+<div class="pagination btn-group btn-group-justified">
+        <ul>
+            {% for p in range(1,nombrePage) %}
+            <li class="btn {% if p==page %}btn-warning {% else %} btn-info{% endif %}">
+                <a href="{{ path('sdz_ati_gestion_magasin',{'id':magasinN.id,'page':p})}}">{{p}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+</div>
+{%  endif  %}
+{% endblock %}

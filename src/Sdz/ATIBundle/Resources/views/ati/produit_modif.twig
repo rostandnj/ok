@@ -1,0 +1,22 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Product/add
+{% endblock %}
+
+{% block titre_panel %}
+	Product Management/Add
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-danger" href="{{ path('sdz_ati_produit') }}">Products Lists</a>
+
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+
+{% include "SdzATIBundle:ati:formulaire.html.twig" %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Personnel/view
+{% endblock %}
+
+{% block titre_panel %}
+	Employee Management/View
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_personnel') }}">Employees List</a>
+  {% if is_granted('ROLE_ADMIN') %}
+  <a class="btn btn-success" href="{{ path('sdz_ati_personnel_ajouter') }}">Add</a>
+  {% endif %}
+  <br/>
+
+
+                              
+{% endblock %}
+
+{% block corps_panel %}
+<div class="well">
+{% for message in app.session.flashbag.get('infosame') %}
+<h5 class="text-success">
+{{message}}
+</h5>
+{% endfor %}
+</div>
+{% include "SdzATIBundle:ati:formulaire_personnel_modifuser.html.twig" %}
+
+
+{% endblock %}

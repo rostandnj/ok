@@ -1,0 +1,31 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Shop/view
+{% endblock %}
+
+{% block titre_panel %}
+	Shop Management/View
+<br/>
+{% for message in app.session.flashbag.get('infoma') %}
+<h5 class="text-success">
+{{message}}
+</h5>
+{% endfor %}
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_magasin') }}">Shops List</a>
+  {% if is_granted('ROLE_ADMIN') %}
+  <a class="btn btn-warning" href="{{ path('sdz_ati_magasin_ajouter') }}">Add</a>
+  {% endif %}
+
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+
+{% include "SdzATIBundle:ati:magasin_voir.html.twig" %}
+
+{% endblock %}

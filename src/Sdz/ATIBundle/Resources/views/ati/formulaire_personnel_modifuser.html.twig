@@ -1,0 +1,43 @@
+<div class="well">
+	{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+	{{ form_errors(form) }}
+
+	
+
+	
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.username,"Username",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.username) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.password,"Password",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.password) }}
+		</div>
+ 	</div>
+ 	</div>
+
+
+
+ 	
+            <button type="submit" class="btn btn-success">Valider</button>
+      
+
+ 	{{ form_rest(form) }}
+
+ 	 {{ form_end(form) }}
+</div>

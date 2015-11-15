@@ -1,0 +1,22 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Product/add
+{% endblock %}
+
+{% block titre_panel %}
+	Shop Management/{{pm.magasin.nom}}
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_gestion_magasin',{'id':pm.magasin.id,'page':1})}}">Products Lists</a>
+
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+<h4>Approvisionnement du produit:"{{pm.produit.nom}}" </h4>
+{% include "SdzATIBundle:ati:formulaire_provision.html.twig" %}
+
+{% endblock %}

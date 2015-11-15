@@ -1,0 +1,388 @@
+
+/*=============================================================
+    Authour URL: www.designbootstrap.com
+    
+    http://www.designbootstrap.com/
+
+    License: MIT
+
+    http://opensource.org/licenses/MIT
+
+    100% Free To use For Personal And Commercial Use.
+
+    IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
+   
+========================================================  */
+
+
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+
+
+
+body {background-color:#CBCFDC;
+	
+    font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+}
+
+
+.center{
+	margin-left: 30px;
+	text-align:left;
+}
+
+.set-radius-zero {
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+	
+}
+
+.content-wrapper {
+    margin-top: 20px;
+    min-height: 600px;
+    
+}
+
+.content-wrappera {
+    margin-top: 0px;
+    min-height: 600px;
+    
+}
+
+.page-head-line {
+    font-weight: 900;
+    
+   
+    text-transform: uppercase;
+    color: #F0677C;
+    font-size: 20px;
+    margin-top: -30px;
+	height: 50px;
+}
+
+.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+.progress {
+    height: 0px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+.login-icon {
+    height: 60px;
+width: 60px;
+padding: 13px;
+border-radius: 50%;
+font-size: 30px;
+margin-bottom: 20px;
+color: #fff;
+text-align: center;
+cursor:pointer;
+background-color:#F0677C;
+-webkit-border-radius:50%;
+    -moz-border-radius:50%;
+}
+/* =============================================================
+   HEADER SECTION STYLES
+ ============================================================ */
+header {
+    background-color: #F0677C;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+.head{
+	margin-top:-40px;
+	
+}
+
+/* =============================================================
+   LOGO SECTION STYLES
+ ============================================================ */
+.left-div {
+    padding-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+	margin-left: 30%;
+}
+
+.navbar-brand {
+    width: 250px;
+    
+}
+
+
+
+/* USER SETTINGS DIV */
+.user-settings-wrapper .nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 18px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: #CBCFDC;
+    color: #fff;
+	margin-top: -30px;
+	margin-left:30px;
+}
+
+.user-settings-wrapper {
+    margin-top: 10px;
+}
+
+    .user-settings-wrapper li {
+        display: inline-block;
+    }
+
+    .user-settings-wrapper .dropdown-settings {
+        width: 200px;
+        padding: 10px;
+    }
+
+    .user-settings-wrapper .nav > li > a:hover,.user-settings-wrapper .nav > li > a:focus {
+        text-decoration: none;
+        background-color: #0DF0F0;
+		
+    }
+
+    .user-settings-wrapper img {
+        height: 64px;
+        width: 64px;
+        border: 1px solid #000000;
+    }
+
+    .user-settings-wrapper .dropdown-menu {
+        margin: 0px;
+        border-radius: 10px!important;
+        -moz-border-radius: 0px!important;
+        -webkit-border-radius: 5px!important;
+		background-color:#CBCFDC;
+		opacity:0.7;
+		margin-left:-40px;
+    }
+
+    .user-settings-wrapper .btn {
+        border-radius: 0px!important;
+        -moz-border-radius: 0px!important;
+        -webkit-border-radius: 0px!important;
+    }
+
+    .user-settings-wrapper .media-heading {
+        padding-top: 10px;
+    }
+
+/* MENU LINKS SECTION*/
+
+.menu-section {
+    background-color: #3D3D3D;
+}
+
+#menu-top a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    text-transform: uppercase;
+}
+
+.menu-top-active {
+    background-color: #C36464;
+}
+
+.menu-section .nav > li > a:hover,.menu-section .nav > li > a:focus {
+    background-color: #F0677C!important;
+}
+
+.menu-section .dropdown-menu > li > a:hover,.menu-section .dropdown-menu > li > a:focus {
+    background-color: #F0677C!important;
+}
+
+.navbar-inverse {
+    background-color: #71A0E6;
+    border-color: transparent;
+}
+
+.navbar-toggle {
+    background-color: #F0677C;
+    border: 1px solid #fff;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+/* =============================================================
+   FOOTER SECTION STYLES
+ ============================================================ */
+footer {
+	margin-bottom: 30px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+	background-color:#71A0E6;
+    
+}
+
+    footer a, footer a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+/*==============================================
+    DASHBOARD  STYLES    
+ =============================================*/
+
+/* DASHBOARD ICONS */
+
+.bk-clr-one {
+    background-color: #B9B739;
+}
+
+.bk-clr-two {
+    background-color: #22FA03;
+}
+
+.bk-clr-three {
+    background-color: #119c7e;
+}
+
+.bk-clr-four {
+    background-color: #324D94;
+}
+
+.dashboard-div-icon {
+    height: 65px;
+    width: 65px;
+    border: 2px solid #fff;
+    padding: 13px;
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: #fff;
+}
+
+.dashboard-div-wrapper {
+    border-radius: 10px;
+    text-align: center;
+	font-size:12px;
+	font-weight:bold;
+    padding: 2px;
+    color: white;
+    margin-bottom: 3px;
+	text-decoration:blink;
+	
+	
+}
+
+    .dashboard-div-wrapper .progress {
+        height: 4px;
+    }
+
+/* NOTICE BOARD */
+
+.main{
+	width:100%;
+}
+.notice-board .panel {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+	margin-right:10px;
+}
+
+.notice-board ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.notice-board li {
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+    .notice-board li span {
+        margin-right: 10px;
+        border: 1px solid #DBDBDB;
+        padding: 5px;
+    }
+
+    .notice-board li a, li a:hover {
+        text-decoration: none;
+        color: #000;
+    }
+
+/* SOCIAL BUTTONS */
+.btn-social {
+    color: white;
+    opacity: 0.8;
+}
+
+    .btn-social:hover {
+        color: white;
+        opacity: 1;
+        text-decoration: none;
+    }
+
+.btn-facebook {
+    background-color: #3b5998;
+}
+
+.btn-twitter {
+    background-color: #00aced;
+}
+
+.btn-linkedin {
+    background-color: #0e76a8;
+}
+
+.btn-google {
+    background-color: #c32f10;
+}
+
+.downloadbtn
+{
+background:#B6C9E7;
+color:#29235C;
+border-radius: 4px 4px 4px 4px;
+opacity:0.8;
+width: 30%;
+height: 180px;
+position:relative;
+margin-left:35%;
+
+}
+.downloadbtn:hover
+{
+background:#FDC976;
+color:#29235C;
+}
+
+.gallery
+ {
+ 
+ background:url('int-societe.jpg');
+ background-size:520px 600px;
+ }
+ 
+ .home-caption {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 180px;
+    left: 0;
+}
+ 
+ }
+ 

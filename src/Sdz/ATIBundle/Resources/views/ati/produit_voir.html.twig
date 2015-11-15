@@ -1,0 +1,25 @@
+
+	{% if produit.picture is not null %}
+
+		<img src="{{ asset(produit.picture.webPath) }}" class="img-thumbnail" width="25%"/>
+	
+	{% endif %}	
+
+<h3>{{ produit.nom}}</h3>
+<i>Ajouter le {{ produit.date|date('d/m/Y') }}</i>
+
+{% if produit.caracteristique is not null %}
+	<div class="well">
+		{{ produit.caracteristique }}
+	</div>
+{% endif %}	
+<p>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('sdz_ati_produit_modifier', {'id': produit.id}) }}" class="btn btn-success">Edit </a>
+<a href="{{ path('sdz_ati_produit_supprimer', {'id': produit.id}) }}" class="btn btn-danger">Delete </a>
+{% endif %}
+
+</p>
+
+
+

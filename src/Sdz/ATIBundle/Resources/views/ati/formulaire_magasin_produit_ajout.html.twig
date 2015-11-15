@@ -1,0 +1,62 @@
+<div class="well">
+	{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+	{{ form_errors(form) }}
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.quantite,"Quantité",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.quantite) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.quantite) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.produit,"Produit",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.produit,{'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.produit) }}
+		</div>
+ 	</div>
+ 	</div>
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.observation,"Observation",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.observation, {'attr': {'class': 'form-control','placeholder': "Bien vouloir preciser la provenance du materiel entré"}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.observation) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	{% if msg is defined %}
+ 	<div class="row">
+ 	<div class="form-group">
+ 		<div class="col-sm-8 control-label text-warning">{{msg}}</div>
+ 	</div>
+ 	</div>
+
+
+ 	{% endif %}
+
+
+ 	
+            <button type="submit" class="btn btn-success">Valider</button>
+      
+
+ 	{{ form_rest(form) }}
+
+ 	 {{ form_end(form) }}
+</div>
+
+
+	    	

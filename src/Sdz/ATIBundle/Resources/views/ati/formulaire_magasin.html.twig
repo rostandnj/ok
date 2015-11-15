@@ -1,0 +1,41 @@
+<div class="well">
+	{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+	{{ form_errors(form) }}
+
+	
+
+	<div class="row">
+	<div class="form-group">
+		{{ form_label(form.nom,"Nom",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.nom) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.ville,"Localisation (ville)",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.ville) }}
+		</div>
+ 	</div>
+ 	</div>
+
+            <button type="submit" class="btn btn-success">Valider</button>
+      
+
+ 	{{ form_rest(form) }}
+
+ 	 {{ form_end(form) }}
+</div>
+
+
+	    	

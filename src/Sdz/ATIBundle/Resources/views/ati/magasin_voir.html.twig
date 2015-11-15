@@ -1,0 +1,13 @@
+<div class="well">
+	<h4>Nom: {{ magasin.nom}}</h4>
+	<h4>Ville: {{ magasin.ville}}</h4>
+</div>
+
+<p>
+{% if is_granted('ROLE_ADMIN') %}
+<a href="{{ path('sdz_ati_magasin_modifier', {'id': magasin.id}) }}" class="btn btn-success">Edit </a>
+<a href="{{ path('sdz_ati_magasin_supprimer', {'id': magasin.id}) }}" class="btn btn-danger">Delete </a>
+{% endif %}
+</p>
+
+

@@ -1,0 +1,17 @@
+<div class="well">
+	<h4>Nom: {{ user.nom}}</h4>
+	<h4>Poste: {{ user.poste}}</h4>
+	<h4>CNI/Passport No: {{ user.noPieceIdent}}</h4>
+	<h4>Ville de Résidence: {{ user.villeResidence}}</h4>
+	<h4>UserName: {{ user.username }}</h4>
+	<h4>Role : {% for role in user.roles %} {{ role.role }} {% endfor %} </h4>
+	
+</div>
+
+{% if is_granted('ROLE_ADMIN') %}
+<p><a href="{{ path('sdz_ati_personnel_modifier', {'id': user.id}) }}" class="btn btn-success">Edit </a>
+<a href="{{ path('sdz_ati_personnel_supprimer', {'id': user.id}) }}" class="btn btn-danger">Delete </a>
+{% endif %}
+</p>
+
+

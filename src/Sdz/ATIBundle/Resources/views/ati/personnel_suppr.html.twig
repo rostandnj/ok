@@ -1,0 +1,44 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Personnel/delete
+{% endblock %}
+
+{% block titre_panel %}
+	Employee Management/delete
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_personnel') }}">Employees List</a>
+<br/>
+{% for message in app.session.flashbag.get('infosup') %}
+<h5 class="text-success">
+{{message}}
+</h5>
+{% endfor %}
+                              
+{% endblock %}
+
+
+{% block corps_panel %}
+
+<div class="well">
+<p>Etes-vous certain de vouloir supprimer cet utilisateur: "{{ user.nom }}" ?
+</p>
+
+<form action="{{ path('sdz_ati_personnel_supprimer', {'id': user.id}) }}" class="form-horizontal"
+method="post">
+
+<a href="{{ path('sdz_ati_personnel')}}"
+class="btn btn-success">
+
+Retour
+</a>
+
+<input type="submit" value="Oui" class="btn btn-danger" />
+{{ form_rest(form) }}
+</form>
+
+</div>
+
+{% endblock %}

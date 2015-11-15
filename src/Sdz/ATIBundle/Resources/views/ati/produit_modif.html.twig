@@ -1,0 +1,21 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Product/Edit
+{% endblock %}
+
+{% block titre_panel %}
+	Product Management/Edit
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_produit') }}">Products Lists</a>
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+<h3>modification d'un produit</h3>
+{% include "SdzATIBundle:ati:formulaire.html.twig" %}
+
+{% endblock %}

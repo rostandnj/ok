@@ -1,0 +1,7 @@
+parameters:
+#    sdz_ati.example.class: Sdz\ATIBundle\Example
+
+services:
+#    sdz_ati.example:
+#        class: %sdz_ati.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

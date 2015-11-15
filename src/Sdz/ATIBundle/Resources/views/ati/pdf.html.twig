@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title> INTEL SHOP</title>
+
+		
+			<link rel="stylesheet" href="{{ asset('ati/css/bootstrap.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('ati/css/font-awesome.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('ati/css/styleimpression.css') }}" type="text/css" />
+			
+		
+
+	</head>
+	<body backtop="0mm" backbottom="0mm" backleft="3mm" backright="3mm">
+	
+
+		<page_header  >
+			<div class="col-lg-6" style="text-align:center" >
+				<img  height="100"  src="{{ asset('ati/img/entete.png') }}" />
+				<hr>
+			</div>
+			<div class="col-lg-6" style="margin-top : 25px;font-size:13px; margin-left : 400px" >
+				<u><i>{{ date|date('l d F Y ') }}</i></u>
+			</div>
+			<div class="col-lg-6" style="margin-top : 20px; margin-left : 120px">
+				<u><h4 style="font-family:Arial; font-size:16px;"> STATISTIQUE DES ENTREES ET SORTIES: {{mois}} {{annee}} </h4></u>
+			</div>
+			<div style="width:100%;margin-left : 60px;" class="col">
+				<table 
+				style=""
+				width="900%" border="1" >
+					
+					<tr>
+						
+						<th ><div style="width:220px;">Produit</div></th>
+						<th><div style="width:70px;">Entrées</div></th>
+						<th><div style="width:70px;">Sorties</div></th>
+						<th>frequence de vente (Produit/jour)</th>
+					</tr>
+					
+					
+					{% for stat in stats %}
+            {% if stat.id is defined %}
+        <tr >
+            <td>
+                <div style="width:220px;">
+                    {{stat.produit.nom}}
+                </div>
+            </td>
+            <td>
+                <div style="width:70px;">{{ stat.entree }}</div>
+            </td>
+            <td>
+                <div style="width:70px;">{{ stat.sortie }}</div>
+            </td>
+            <td>
+                {{ stat.freqvente }}
+            </td>
+        </tr>
+            {% else %}
+            <tr class="danger">
+                Aucune statistique enregistrée
+            </tr>
+        {% endif %}
+        {% endfor %}
+				
+
+
+				</table>
+			</div>
+
+		</page_header>
+		<page_footer>
+			
+			<hr>
+			<p style="font-family:Arial; font-size:14px; text-align:center;">
+				BP : 16084 Yaoundé-Cameroun/E-mail :intel_sarl@yahoo.fr /Tel : 22-23-56-28 / 22-18-20-65<br>
+				 N°RC /YAO/2009/B/927|N°Contribuable : M040900031005N<br>
+				<strong>SGBC</strong> /Code banque : 10003 compte N° 04000 06 40 0171801 65 /code swift : SGCMCMCX
+
+
+			</p>
+		</page_footer>
+
+		
+		
+
+	
+		
+	        
+   
+        	
+   		
+	
+		
+
+	    
+
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        Sdz\UserBundle\Entity\User:
+            algorithm: sha512
+            encode_as_base64: true
+            iterations: 10
+
+    role_hierarchy:
+        ROLE_GESTIONNAIRE: [ROLE_EMPLOYE]
+        ROLE_ADMIN:       [ROLE_EMPLOYE, ROLE_GESTIONNAIRE]
+        ROLE_SUPER_ADMIN: [ROLE_EMPLOYE, ROLE_GESTIONNAIRE, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        main:
+            entity:
+                class: Sdz\UserBundle\Entity\User
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        login_firewall:
+            pattern:  ^/login$
+            anonymous: true
+        main:
+            pattern:  ^/
+            anonymous: false
+            provider: main
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: /ati/gestion
+            logout:
+                path: logout
+                target: /login
+                
+                
+    access_control:
+        #- { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: /ajouter, roles: ROLE_ADMIN, requires_channel: https}
+        - { path: /modifier, roles: ROLE_ADMIN, requires_channel: https}
+        - { path: /supprimer, roles: ROLE_ADMIN, requires_channel: https}
+        - { path: /provision, roles: ROLE_GESTIONNAIRE, requires_channel: https}
+        - { path: /sortie, roles: ROLE_GESTIONNAIRE, requires_channel: https}
+        - { path: /afficher, roles: ROLE_EMPLOYE, requires_channel: https}
+        - { path: /statistique, roles: ROLE_EMPLOYE, requires_channel: https}
+        - { path: /gestion, roles: ROLE_EMPLOYE, requires_channel: https}
+        - { path: /test, roles: ROLE_EMPLOYE, requires_channel: https}
+        - { path: /profile, roles: ROLE_EMPLOYE, requires_channel: https}
+        - { path: /imprimer, roles: ROLE_EMPLOYE, requires_channel: https}

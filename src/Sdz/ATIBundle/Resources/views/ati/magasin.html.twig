@@ -1,0 +1,77 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Shop
+{% endblock %}
+
+{% block titre_panel %}
+    Shop Management
+{% endblock %}
+
+{% block option_panel %}
+{% if is_granted('ROLE_ADMIN') %}
+<a class="btn btn-info" href="{{ path('sdz_ati_magasin_ajouter') }}">Add</a>
+{% endif %}
+                           
+{% endblock %}
+
+{% block corps_panel %}
+{% set pied=1 %}
+<section class="table-responsive">
+<table class="table table-striped table-condensed">
+    <div class="panel-heading">
+        <h2 class="panel-title">Liste des Magasins</h2>
+        
+    </div>
+    <thead>
+    <tr>
+    <td>Statut</td>
+    <th>Nom</th>
+    <th>Réglage</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if nombrePage == 0 %}
+    {% set pied=0 %}
+    <tr class="warning"> <td> Aucun Magasin enregistré</td></tr>
+    {% elseif page > nombrePage %}
+    
+    <tr class="well"> <td>Page incorrecte </td> </tr>
+    {% else %}
+    
+    {% for magasin in magasins %}
+    {% if magasin.nom is defined %}
+    <tr class="warning">
+    <td><span class="glyphicon glyphicon-tag text-warning" ></span> </td>
+    <td> <a href="{{ path('sdz_ati_gestion_magasin',{'id':magasin.id})}}">{{ magasin.nom }} </a></td>
+    <td><a href="{{ path('sdz_ati_magasin_afficher', {'id': magasin.id}) }}"> <i  class="fa fa-cogs" ></i> </a></td>
+    </tr>
+    {% else %}
+    <tr class="warning"> <td> Aucun Magasin enregistré</td></tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+
+
+    {% endif %}
+
+
+ </table>   
+</section>
+{% if pied==1 %}
+<div class="pagination btn-group btn-group-justified">
+        <ul>
+            {% for p in range(1,nombrePage) %}
+            <li class="btn {% if p==page %}btn-warning {% else %} btn-info{% endif %}">
+                <a href="{{ path('sdz_ati_magasin',{'page':p})}}">{{p}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+</div>
+{%  endif  %}
+    
+    
+
+
+    
+{% endblock %}

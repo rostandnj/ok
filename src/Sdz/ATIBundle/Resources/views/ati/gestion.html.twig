@@ -1,0 +1,55 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+{% block titre_panel %}
+	<h4>Bienvenue Dans le Panel de gestion des Produits </h4>
+{% endblock %}
+
+{% block option_panel %}
+<h5><i>Liste des Opérations récemments éffectuées</i></h5>
+
+{% for message in app.session.flashbag.get('infoalerte') %}
+<h5  id="LblClignotant" class="text-danger">
+{{message}}
+</h5>
+<script type="text/javascript">
+var signe = -1;
+var clignotementFading = function(){
+   var obj = document.getElementById('LblClignotant');
+   if (obj.style.opacity >= 0.96){
+      signe = -1;
+   }
+   if (obj.style.opacity <= 0.04){
+      signe = 1;
+   }
+   obj.style.opacity = (obj.style.opacity * 1) + (signe * 0.04);
+};
+
+// mise en place de l appel de la fonction toutes les 0.085 secondes
+// Pour arrêter le clignotement : clearInterval(periode);
+periode = setInterval(clignotementFading, 85 );
+</script>
+{% endfor %}
+
+
+{% endblock %}
+
+{% block corps_panel %}
+<ul >
+    <li>
+        <a href="{{ path('sdz_ati_gestion_entree') }}">
+			<span class="glyphicon glyphicon-align-left text-success" ></span> 
+                  Entrée des Produits 
+            <span class="label label-warning" > Just now </span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('sdz_ati_gestion_sortie') }}">
+			<span class="glyphicon glyphicon-info-sign text-danger" ></span>  
+				Sortie des Produits
+			<span class="label label-info" > Just now</span>
+        </a>
+    </li>
+   
+</ul>
+
+
+{% endblock %}

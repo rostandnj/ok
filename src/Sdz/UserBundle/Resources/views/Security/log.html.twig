@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title> ATI SHOP</title>
+
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('ati/css/bootstrap.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('ati/css/font-awesome.css') }}" type="text/css" />
+			<link rel="stylesheet" href="{{ asset('ati/css/style.css') }}" type="text/css" />
+			
+		{% endblock %}
+
+	</head>
+	<body>
+	
+		<!-- head begin here -->
+
+		<div class="navbar navbar-inverse set-radius-zero">
+	        <div class="container">
+	            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 navbar-header">
+	                <button type="button" class="head navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                    <span class="icon-bar"></span>
+	                </button>
+	                <a class="navbar-brand" href="index.html">
+
+	                    <img height="70px" src="{{ asset('ati/img/logo-ATI.png') }}" />
+	                </a>
+
+	            </div>
+
+	            <div class="col-offset-lg-2 col-lg-3 col-offset-md-2 col-md-3 col-offset-sm-2 col-sm-3 col-offset-xs-2 col-xs-3 left-div">
+	                <div class="user-settings-wrapper">
+	                    <ul class="nav">
+
+	                        
+
+
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+
+	    <!-- head end here -->
+
+	    <!-- main begin here -->
+	    <div class="content-wrappera gallery">
+			<div class="container main">
+			<div class="home-caption">  
+	        <div  class="downloadbtn"><h3>Login</h3>
+		            {% if error %}
+
+    <div class="alert alert-danger">{{ error.message }}</div>
+
+  {% endif %}
+  <div style="padding: 20px;" id="form-olvidado">
+  <form action="{{ path('login_check') }}" method="post">
+    <h4 class="">
+      Signin!
+    </h4>
+      <fieldset>
+        <div class="form-group input-group">
+          <span class="input-group-addon">
+            Username
+          </span>
+          <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}">
+        </div>
+        <div class="form-group input-group">
+          <span class="input-group-addon">
+            Password
+          </span>
+          <input class="form-control" type="password" id="password" name="_password">
+        </div>
+        <div class="form-group">
+          
+          <input type="submit" value="Connexion" class="btn btn-primary btn-block"/>
+          
+        </div>
+      </fieldset>
+    </form>
+  </div>
+	         </div> 
+			 </div>
+			
+			</div>    
+	    </div>
+
+    	<!-- end -->
+
+	    <footer>
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-md-12">
+	                    &copy; 2015 ATI | By : <a href="#" target="_blank">Rostandnj</a>
+	                </div>
+
+	            </div>
+	        </div>
+	    </footer>
+
+		{% block javascripts %}
+				{# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+			<script type="text/javascript" src="{{ asset('ati/js/jquery-1.11.1.js')}}"></script>
+			<script type="text/javascript" src="{{ asset('ati/js/bootstrap.js')}}"></script>
+			
+		{% endblock %}
+	</body>
+</html>

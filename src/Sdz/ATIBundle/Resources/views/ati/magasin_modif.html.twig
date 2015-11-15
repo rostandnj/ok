@@ -1,0 +1,21 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Shop/Edit
+{% endblock %}
+
+{% block titre_panel %}
+	Shop Management/Edit
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-danger" href="{{ path('sdz_ati_magasin') }}">Shop List</a>
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+<h3>modification d'un magasin</h3>
+{% include "SdzATIBundle:ati:formulaire_magasin.html.twig" %}
+
+{% endblock %}

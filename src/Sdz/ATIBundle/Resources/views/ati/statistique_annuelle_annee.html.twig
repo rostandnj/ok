@@ -1,0 +1,34 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Statistic
+{% endblock %}
+
+{% block titre_panel %}
+	<h4><i>Panel des statistiques</i></h4>
+{% endblock %}
+
+{% block option_panel %}
+<i><h4>Statistic >> Year: {{annee}} order by month </h4>  </i>                        
+{% endblock %}
+
+{% block corps_panel %}
+
+{% for moi in mois %}
+    {% if moi is defined %}
+        <ul >
+            <li>
+                <a href="{{ path('sdz_ati_statistique_mois',{'annee': annee,'mois':moi.mois}) }}">
+                    <span class="glyphicon glyphicon-folder-open text-success" ></span> 
+                          {{moi.mois}} 
+                </a>
+            </li>
+        </ul>
+    {% else %}
+        <h4>Aucune statistique enregistée</h4>
+    {% endif %}
+{% endfor %}
+
+
+
+{% endblock %}

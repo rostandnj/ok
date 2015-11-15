@@ -1,0 +1,114 @@
+<div class="well">
+	{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+	{{ form_errors(form) }}
+
+	
+
+	<div class="row">
+	<div class="form-group">
+		{{ form_label(form.nom,"Nom",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.nom) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.noPieceIdent,"Numero piece d'identité",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.noPieceIdent, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.noPieceIdent) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.poste,"Poste",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.poste, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.poste) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.villeResidence,"Ville de residence",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.villeResidence, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.villeResidence) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.username,"Username",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.username) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.password,"Password",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.password) }}
+		</div>
+ 	</div>
+ 	</div>
+
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.roles,"Role",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.roles,{'attr': {'class': 'form-control'}}) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.roles) }}
+		</div>
+ 	</div>
+ 	</div>
+ 	<div class="row">
+ 	<div class="form-group">
+		{{ form_label(form.isActive,"Statut(Activer/Désactiver)",{'label_attr': {'class': 'col-sm-3 control-label'}})}}
+		<div class="col-sm-4">
+			{{ form_widget(form.isActive) }}
+		</div>
+		<div class="col-sm-8">
+		{{ form_errors(form.isActive) }}
+		</div>
+ 	</div>
+ 	</div>
+
+
+ 	
+            <button type="submit" class="btn btn-success">Valider</button>
+      
+
+ 	{{ form_rest(form) }}
+
+ 	 {{ form_end(form) }}
+</div>
+
+
+	    	

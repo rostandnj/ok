@@ -1,0 +1,21 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Personnel/Edit
+{% endblock %}
+
+{% block titre_panel %}
+	Employee Management/Edit
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_personnel') }}">Employees List</a>
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+<h3>modification d'un personnel</h3>
+{% include "SdzATIBundle:ati:formulaire_personnel_modif.html.twig" %}
+
+{% endblock %}

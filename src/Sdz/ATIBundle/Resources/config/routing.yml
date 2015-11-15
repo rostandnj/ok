@@ -1,0 +1,164 @@
+sdz_ati_test:
+    path:    /test/{name}
+    defaults: { _controller:SdzATIBundle:gestion:test}
+
+sdz_ati_gestion:
+    path:    /gestion
+    defaults: { _controller: SdzATIBundle:gestion:index}
+
+sdz_ati_gestion_entree:
+    path:    /gestion/Entree/{page}
+    defaults: { _controller: SdzATIBundle:gestion:Entree,page:1}
+    requirements:
+        page: \d*
+
+sdz_ati_gestion_sortie:
+    path:    /gestion/Sortie/{page}
+    defaults: { _controller: SdzATIBundle:gestion:Sortie,page:1}
+    requirements:
+        page: \d*
+
+sdz_ati_produit:
+    path:    /produit/{page}
+    defaults: { _controller: SdzATIBundle:gestion:produit,page:1}
+    requirements:
+        page: \d*
+
+sdz_ati_produit_ajouter:
+    path:    /produit/ajouter
+    defaults: { _controller: SdzATIBundle:gestion:produit_ajouter}
+
+sdz_ati_produit_modifier:
+    path:    /produit/modifier/{id}
+    defaults: { _controller:SdzATIBundle:gestion:produit_modifier}
+    requirements:
+        id: \d+
+
+sdz_ati_produit_afficher:
+    path:    /produit/afficher/{id}
+    defaults: { _controller: SdzATIBundle:gestion:produit_afficher}
+    requirements:
+        id:  \d+
+sdz_ati_produit_supprimer:
+    path: /produit/supprimer/{id}
+    defaults: { _controller:SdzATIBundle:gestion:produit_supprimer}
+    requirements:
+        id:  \d+
+sdz_ati_magasin:
+    path:    /magasin/{page}
+    defaults: { _controller: SdzATIBundle:gestion:magasin,page:1}
+    requirements:
+        page:  \d*
+
+sdz_ati_magasin_ajouter:
+    path:    /magasin/ajouter
+    defaults: { _controller: SdzATIBundle:gestion:magasin_ajouter}
+
+sdz_ati_magasin_afficher:
+    path:    /magasin/afficher/{id}
+    defaults: { _controller:SdzATIBundle:gestion:magasin_afficher}
+    requirements:
+        id:  \d+
+
+sdz_ati_magasin_modifier:
+    path:    /magasin/modifier/{id}
+    defaults : { _controller:SdzATIBundle:gestion:magasin_modifier}
+    requirements:
+        id:  \d+
+
+sdz_ati_magasin_supprimer:
+    path:    /magasin/supprimer/{id}
+    defaults: { _controller:SdzATIBundle:gestion:magasin_supprimer}
+    requirements:
+        id:  \d+
+
+sdz_ati_personnel:
+    path:    /personnel/{page}
+    defaults: { _controller: SdzATIBundle:gestion:user,page:1}
+    requirements:
+        page:  \d*
+
+sdz_ati_personnel_ajouter:
+    path:    /personnel/ajouter
+    defaults: { _controller: SdzATIBundle:gestion:user_ajouter}
+sdz_ati_personnel_afficher:
+    path:    /personnel/afficher/{id}
+    defaults: { _controller:SdzATIBundle:gestion:user_afficher}
+    requirements:
+        id:  \d+
+
+sdz_ati_personnel_modifier:
+    path:    /personnel/modifier/{id}
+    defaults: { _controller:SdzATIBundle:gestion:user_modifier}
+    requirements:
+        id:  \d+
+
+sdz_ati_personnel_supprimer:
+    path:    /personnel/supprimer/{id}
+    defaults: { _controller:SdzATIBundle:gestion:user_supprimer}
+    requirements:
+        id:  \d+
+sdz_ati_statistique:
+    path:    /statistique
+    defaults: { _controller: SdzATIBundle:gestion:statistique}
+
+sdz_ati_statistique_mensuelle:
+    path:    /statistique/mensuelle/
+    defaults: { _controller:SdzATIBundle:gestion:statistique_mensuelle}
+
+sdz_ati_statistique_annuelle:
+    path:    /statistique/annuelle/
+    defaults: { _controller:SdzATIBundle:gestion:statistique_annuelle}
+
+sdz_ati_statistique_annuelle_annee:
+    path:    /statistique/annuelle/{annee}
+    defaults: { _controller:SdzATIBundle:gestion:statistique_annuelle_annee}
+    requirements:
+        annee:  \d+
+
+sdz_ati_statistique_mois:
+    path:    /statistique/{annee}/{mois}
+    defaults: { _controller:SdzATIBundle:gestion:statistique_mois}
+    requirements:
+        annee:  \d+
+        mois:  \d+
+
+sdz_ati_gestion_magasin:
+    path:    /gestion/magasin/{id}/{page}
+    defaults: { _controller:SdzATIBundle:gestion:gestionmagasin,page:1}
+    requirements:
+        id:  \d+
+        page:  \d*
+
+sdz_ati_magasin_provision:
+    path:    /magasin/provision/{id}
+    defaults: { _controller:SdzATIBundle:gestion:magasin_provision}
+    requirements:
+        id:  \d+
+
+sdz_ati_magasin_sortie:
+    path:    /magasin/sortie/{id}
+    defaults: { _controller:SdzATIBundle:gestion:magasin_sortie}
+    requirements:
+        id:  \d+
+
+sdz_ati_gestion_magasin_ajout:
+    path:    /gestion/magasin/ajouter/{id}
+    defaults: { _controller:SdzATIBundle:gestion:gestionmagasin_ajouter}
+    requirements:
+        id:  \d+
+
+sdz_ati_personnel_profil:
+    path:    /personnel/profile/{id}
+    defaults: { _controller:SdzATIBundle:gestion:user_profil}
+    requirements:
+        id:  \d+
+sdz_ati_impression_mois:
+    path:    /impression/{annee}/{mois}
+    defaults: { _controller:SdzATIBundle:gestion:imprimer_mois}
+    requirements:
+        annee:  \d+
+
+sdz_ati_impression_etat:
+    path:    /impression/etat
+    defaults: { _controller:SdzATIBundle:gestion:imprimer_etat}

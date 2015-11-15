@@ -1,0 +1,34 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Statistic
+{% endblock %}
+
+{% block titre_panel %}
+	<h4><i>Panel des statistiques</i></h4>
+{% endblock %}
+
+{% block option_panel %}
+                         
+{% endblock %}
+
+{% block corps_panel %}
+<ul >
+
+    <li>
+        <a href="{{ path('sdz_ati_statistique_mensuelle') }}" >
+			<span class="glyphicon glyphicon-folder-open text-success" ></span> 
+                  <i>Statistiques du mois en cours</i>
+            
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('sdz_ati_statistique_annuelle') }}">
+            <span class="glyphicon glyphicon-folder-open text-success" ></span> 
+                  <i>Statistiques Annuelles</i>
+            
+        </a>
+    </li>
+    
+</ul>
+{% endblock %}

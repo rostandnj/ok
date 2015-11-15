@@ -1,0 +1,38 @@
+{% extends "SdzATIBundle::atilayout.html.twig" %}
+
+{% block workspace_name %}
+Product/delete
+{% endblock %}
+
+{% block titre_panel %}
+	Product Management/delete
+{% endblock %}
+
+{% block option_panel %}
+  <a class="btn btn-info" href="{{ path('sdz_ati_produit') }}">Products Lists</a>
+
+                              
+{% endblock %}
+
+{% block corps_panel %}
+
+<div class="well">
+<p>Etes-vous certain de vouloir supprimer ce produit: "{{ produit.nom }}" ?
+</p>
+
+<form action="{{ path('sdz_ati_produit_supprimer', {'id': produit.id}) }}" class="form-horizontal"
+method="post">
+
+<a href="{{ path('sdz_ati_produit')}}"
+class="btn btn-success">
+
+Retour
+</a>
+
+<input type="submit" value="Supprimer" class="btn btn-danger" />
+{{ form_rest(form) }}
+</form>
+
+</div>
+
+{% endblock %}
